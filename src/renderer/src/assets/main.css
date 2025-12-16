@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+    --color-bg: #ffffff;
+    --color-fg: #000000;
+    --color-surface: #eeeeee;
+    --color-border: #dadada;
+    --color-circle: #cc532a;
+    --color-cross: #000000;
+}
+
+body {
+    @apply bg-bg text-fg;
+}
+
+.circle {
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    border: 15px solid var(--color-circle);
+    box-sizing: border-box;
+}
+
+.cross {
+    height: 90px;
+    width: 90px;
+    position: relative;
+}
+
+.cross:before,
+.cross:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 105px;
+    width: 15px;
+    background-color: var(--color-cross);
+}
+
+.cross:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.cross:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
